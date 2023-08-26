@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Strl} from "../Components/index";
+import {Str1} from "../Components/index";
 
 export default ({startModal, setStartModal, startShipment}) => {
   const [getProduct, setGetProduct] = useState({
