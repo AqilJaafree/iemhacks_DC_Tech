@@ -3,7 +3,7 @@
 
 Team Members (with github account):
 Wan Muhammad Aqil Bin Wan Jaafree (AqilJaafree)
-Muhammad Haziq Fiqri Bin Norhasmi ()
+Muhammad Haziq Fiqri Bin Norhasmi (ethosylar)
 Intan Nur Aleya binti Maliki (aleyamaliki)
 Mohamad Afiq Bin Mohammad Dzulhazmi (MohamadAfiq17)
 
