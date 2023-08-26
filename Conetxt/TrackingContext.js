@@ -81,7 +81,7 @@ export const TrackingProvider = ({ children }) => {
   const completeShipment = async (completeShip) => {
     console.log(completeShip);
 
-    const { receiver, index } = completeShip;
+    const { recevier, index } = completeShip;
     try {
       if (!window.ethereum) return "Install Metamask";
       const accounts = await window.ethereum.request({
@@ -95,7 +95,7 @@ export const TrackingProvider = ({ children }) => {
 
       const transaction = await contract.completeShipment(
         accounts[0],
-        receiver,
+        recevier,
         index,
         {
           gasLimit: 300000,
@@ -114,7 +114,7 @@ export const TrackingProvider = ({ children }) => {
     try {
       if (window.ethereum) return "Install Metamask";
 
-      const acccounts = await window.ethereum.request({
+      const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
       const provider = new ethers.providers.JsonRpcProvider();
