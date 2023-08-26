@@ -1,10 +1,18 @@
 # Tracking supply chain (VeriChain)
 
+<<<<<<< HEAD
 Team Members (with github account):
 Wan Muhammad Aqil Bin Wan Jaafree (AqilJaafree)
 Muhammad Haziq Fiqri Bin Norhasmi ()
 Intan Nur Aleya binti Maliki (aleyamaliki)
 Mohamad Afiq Bin Mohammad Dzulhazmi (MohamadAfiq17)
+=======
+Team Members:
+Wan Muhammad Aqil Bin Wan Jaafree,
+Muhammad Haziq Fiqri Bin Norhasmi,
+Intan Nur Aleya binti Maliki,
+Mohamad Afiq Bin Mohammad Dzulhazmi
+>>>>>>> 3f23a7776066938beeac9cc222230c25c689f9bf
 
 Theme chosen:
 Open
