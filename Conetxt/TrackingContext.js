@@ -3,7 +3,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 
 //internal import
-import tracking from "./Tracking.json";
+import tracking from "../Conetxt/Tracking.json";
 const ContractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 const ContractABI = tracking.abi;
 
@@ -30,11 +30,11 @@ export const TrackingProvider = ({ children }) => {
       const contract = fetchContract(signer);
       const createItem = await contract.createShipment(
         receiver,
-        new Date(pickupTime).gotTime(),
+        new Date(pickupTime).getTime(),
         distance,
         ethers.utils.parseUnits(price, 18),
         {
-          value: ethers.uitls.parseUnits(price, 18),
+          value: ethers.utils.parseUnits(price, 18),
         }
       );
       await createItem.wait();
@@ -49,7 +49,7 @@ export const TrackingProvider = ({ children }) => {
       const provider = new ethers.providers.JsonRpcProvider();
       const contract = fetchContract(provider);
       const shipments = await contract.getAllTransactions();
-      const getAllShipment = shipments.map((shipment) => ({
+      const allShipments = shipments.map((shipment) => ({
         sender: shipment.sender,
         receiver: shipment.receiver,
         price: ethers.utils.formatEther(shipment.price.toString()),
@@ -58,7 +58,7 @@ export const TrackingProvider = ({ children }) => {
         isPaid: shipment.isPaid,
         status: shipment.status,
       }));
-      return getAllShipment;
+      return allShipments;
     } catch (error) {
       console.log("error want, getting shipment");
     }
@@ -150,14 +150,14 @@ export const TrackingProvider = ({ children }) => {
       const connection = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
       const signer = provider.getSigner();
-      const contract = fetchContract(Signer);
+      const contract = fetchContract(signer);
       const shipment = await contract.startShipment(
         accounts[0],
         reveiver,
         index * 1
       );
       shipment.wait();
-      crossOriginIsolated.log(shipment);
+      console.log(shipment);
     } catch (error) {
       console.log("Sorry no chipment", error);
     }
