@@ -1,13 +1,17 @@
 # Tracking supply chain (VeriChain)
 
-Team Members:
-Wan Muhammad Aqil Bin Wan Jaafree
-Muhammad Haziq Fiqri Bin Norhasmi
-Intan Nur Aleya binti Maliki
-Mohamad Afiq Bin Mohammad Dzulhazmi
+Team Members (with github account):
+Wan Muhammad Aqil Bin Wan Jaafree (AqilJaafree)
+Muhammad Haziq Fiqri Bin Norhasmi ()
+Intan Nur Aleya binti Maliki (aleyamaliki)
+Mohamad Afiq Bin Mohammad Dzulhazmi (MohamadAfiq17)
 
 Theme chosen:
 Open
+
+Problem statement:
+In traditional supply chains, lack of transparency, counterfeiting, and ethical concerns often plague the industry. Consumers, stakeholders, and regulatory bodies struggle to verify the authenticity, journey, and ethical practices behind products. There's a need for a solution that enhances transparency, reduces fraud, and ensures fair labor practices throughout the supply chain.
+
 
 This project demonstrates by registering each product on the blockchain and utilizing smart contracts to record its journey, quality checks, and interactions, VeriChain ensures that stakeholders have access to trustworthy and tamper-proof information in real time.
 
