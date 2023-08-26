@@ -1,9 +1,9 @@
 # Tracking supply chain (VeriChain)
 
 Team Members:
-Wan Muhammad Aqil Bin Wan Jaafree
-Muhammad Haziq Fiqri Bin Norhasmi
-Intan Nur Aleya binti Maliki
+Wan Muhammad Aqil Bin Wan Jaafree,
+Muhammad Haziq Fiqri Bin Norhasmi,
+Intan Nur Aleya binti Maliki,
 Mohamad Afiq Bin Mohammad Dzulhazmi
 
 Theme chosen:
