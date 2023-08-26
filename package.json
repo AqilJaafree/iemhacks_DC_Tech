@@ -11,7 +11,7 @@
     "dependencies": {
         "@next/font": "13.2.4",
         "ethers": "^5.7.2",
-        "hardhat": "^2.13.0",
+        "hardhat": "^2.17.1",
         "next": "^13.4.19",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
