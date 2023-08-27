@@ -26,16 +26,14 @@ export default () => {
     <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
       <div className="flex items-center justify-between py-5 md:block">
         <a href="javascript:void(0)">
-          <img src="https://www.floatui.com/logo.svg"
+          <img src="https://i.ibb.co/Jtyf5XD/logo-1.png"
           width={120}
           height={50}
           alt="Float UI logo"
           />
         </a>
         <div className="md-hidden">
-          <button className="menu-btn text-gray-500 hover:text-gray-800"
-          onClick={() => setState(!state)}
-          >
+          <button className="menu-btn text-gray-500 hover:text-gray-800" onClick={() => setState(!state)}>
             {state ? <Nav1 /> : <Nav2 />}
           </button>
         </div>

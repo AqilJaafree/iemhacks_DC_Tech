@@ -1,9 +1,9 @@
-import shipCount from "./1.jpg";
-import getShipment from "./2.jpg";
-import compShipment from "./3.jpg";
-import startShipment from "./4.jpg";
-import userProfile from "./5.jpg";
-import send from "./6.jpg";
+import shipCount from "./1.png";
+import getShipment from "./2.png";
+import compShipment from "./3.png";
+import startShipment from "./4.png";
+import userProfile from "./5.png";
+import send from "./6.png";
 import avatar from "./creator9.png";
 
 export default {

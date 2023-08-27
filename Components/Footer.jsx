@@ -24,7 +24,7 @@ export default () => {
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="justidy-between sm:flex">
           <div className="space-y-6">
-            <img src="https://www.floatui.com/logo.svg" className="w-32" />
+            <img src="https://i.ibb.co/Jtyf5XD/logo-1.png" alt="Alternative text" className="w-32" />
             <p className="max-w-md">
               meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
             </p>
