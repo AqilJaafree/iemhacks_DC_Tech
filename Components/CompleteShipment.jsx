@@ -48,7 +48,7 @@ export default ({completeModal, setCompleteModal, completeShipment}) => {
                   onChange={(e) =>
                     setCompleteShip({
                       ...completeShip,
-                      receiver: e.target.value,
+                      recevier: e.target.value,
                     })
                   }>
                 </input>

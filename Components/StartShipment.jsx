@@ -3,7 +3,7 @@ import {Str1} from "../Components/index";
 
 export default ({startModal, setStartModal, startShipment}) => {
   const [getProduct, setGetProduct] = useState({
-    receiver: "",
+    reveiver: "",
     index: "",
   });
 
@@ -39,7 +39,7 @@ export default ({startModal, setStartModal, startShipment}) => {
                 onChange={(e) => 
                   setGetProduct({
                     ...getProduct,
-                    receiver: e.target.value,
+                    reveiver: e.target.value,
                   })
                 }>
                 </input>
