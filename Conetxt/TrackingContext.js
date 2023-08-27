@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 
 //internal import
 import tracking from "../Conetxt/Tracking.json";
-const ContractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const ContractAddress = "0xc8822FeeFf65516ea9826d551432B65Ab44bE02A";
 const ContractABI = tracking.abi;
 
 //Fetching
@@ -46,7 +46,9 @@ export const TrackingProvider = ({ children }) => {
 
   const getAllShipment = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://eth-sepolia.g.alchemy.com/v2/FJMnbTBmWcaIsaMX8zzK7XyiA26ubum0"
+      );
       const contract = fetchContract(provider);
       const shipments = await contract.getAllTransactions();
       const allShipments = shipments.map((shipment) => ({
@@ -69,7 +71,9 @@ export const TrackingProvider = ({ children }) => {
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://eth-sepolia.g.alchemy.com/v2/FJMnbTBmWcaIsaMX8zzK7XyiA26ubum0"
+      );
       const contract = fetchContract(provider);
       const shipmentsCount = await contract.getShipmentsCount(accounts[0]);
       return shipmentsCount.toNumber();
@@ -117,7 +121,9 @@ export const TrackingProvider = ({ children }) => {
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://eth-sepolia.g.alchemy.com/v2/FJMnbTBmWcaIsaMX8zzK7XyiA26ubum0"
+      );
       const contract = fetchContract(provider);
       const shipment = await contract.getShipment(accounts[0], index * 1);
 
@@ -137,7 +143,7 @@ export const TrackingProvider = ({ children }) => {
     }
   };
 
-  const startShipmment = async (getProduct) => {
+  const startShipment = async (getProduct) => {
     const { reveiver, index } = getProduct;
 
     try {
@@ -206,7 +212,7 @@ export const TrackingProvider = ({ children }) => {
         getAllShipment,
         completeShipment,
         getShipment,
-        startShipmment,
+        startShipment,
         getShipmentsCount,
         DappName,
         currentUser,
