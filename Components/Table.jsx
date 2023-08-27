@@ -11,7 +11,9 @@ export default ({ setCreateShipmentModel, allShipmentsdata }) => {
     return dataTime
   };
 
-  console.log(allShipmentsdata);
+  console.log("Received shipments data in Table:", allShipmentsdata);
+
+
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 md:px-8">
@@ -52,7 +54,7 @@ export default ({ setCreateShipmentModel, allShipmentsdata }) => {
             </tr>
           </thead>
           <tbody className="text-gray-600 divide-y">
-            {allshipmentsdata?.map((shipment, idx) => (
+            {allShipmentsdata?.map((shipment, idx) => (
               <tr key={idx}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   {shipment.sender.slice(0, 15)}...

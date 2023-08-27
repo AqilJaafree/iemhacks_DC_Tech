@@ -39,6 +39,14 @@ export const TrackingProvider = ({ children }) => {
       );
       await createItem.wait();
       console.log(createItem);
+
+      // Print the transaction hash for reference
+      console.log("Transaction Hash:", createItem.hash);
+
+      // Fetch updated shipment data after creating the shipment
+      const updatedShipments = await getAllShipment();
+
+      console.log("Updated Shipments:", updatedShipments);
     } catch (error) {
       console.log("Some want wrong", error);
     }
@@ -46,10 +54,19 @@ export const TrackingProvider = ({ children }) => {
 
   const getAllShipment = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://eth-sepolia.g.alchemy.com/v2/FJMnbTBmWcaIsaMX8zzK7XyiA26ubum0"
+      );
       const contract = fetchContract(provider);
       const shipments = await contract.getAllTransactions();
-      const allShipments = shipments.map((shipment) => ({
+      
+      console.log("Shipments from contract:", shipments); // Check if you're getting the data
+
+      const allShipments = shipments.map((shipment) => {
+        
+      console.log("Raw shipment data at index", index, ":", shipment);
+
+        return {
         sender: shipment.sender,
         receiver: shipment.receiver,
         price: ethers.utils.formatEther(shipment.price.toString()),
@@ -57,19 +74,24 @@ export const TrackingProvider = ({ children }) => {
         distance: shipment.distance.toNumber(),
         isPaid: shipment.isPaid,
         status: shipment.status,
-      }));
+        };
+      });
       return allShipments;
     } catch (error) {
-      console.log("error want, getting shipment");
+      console.error("Error fetching shipments:", error);
+      return [];
     }
   };
+  
   const getShipmentsCount = async () => {
     try {
       if (!window.ethereum) return "Install metamask";
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://eth-sepolia.g.alchemy.com/v2/FJMnbTBmWcaIsaMX8zzK7XyiA26ubum0"
+      );
       const contract = fetchContract(provider);
       const shipmentsCount = await contract.getShipmentsCount(accounts[0]);
       return shipmentsCount.toNumber();
@@ -117,7 +139,9 @@ export const TrackingProvider = ({ children }) => {
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://eth-sepolia.g.alchemy.com/v2/FJMnbTBmWcaIsaMX8zzK7XyiA26ubum0"
+      );
       const contract = fetchContract(provider);
       const shipment = await contract.getShipment(accounts[0], index * 1);
 
@@ -217,3 +241,5 @@ export const TrackingProvider = ({ children }) => {
     </TrackingContext.Provider>
   );
 };
+
+export default TrackingProvider;
